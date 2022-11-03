@@ -103,7 +103,7 @@ function moveToFood(headCoord){
     move='up'
   }else if(food.y<headCoord.y){
     move='down'
-  }else{console.log('No food detected')}
+  }else{console.log('No food detected');return null}
   return move
 }
 // Returns object with new head position after move
@@ -136,7 +136,7 @@ function handleMove(request, response) {
   var move
   var done=false
   while (!done) {
-    if(possibleMoves.includes(moveToFood(yourSnake.head))){
+    if(moveToFood(yourSnake.head)!=null){
       move=moveToFood(yourSnake.head)
     }else{
       move = possibleMoves[Math.round(Math.random()*possibleMoves.length)]
