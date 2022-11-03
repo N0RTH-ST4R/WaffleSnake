@@ -121,7 +121,7 @@ function handleMove(request, response) {
   var move
   var done=false
   while (!done) {
-    var food=findClosestFood(headCoord,gameData.food)
+    /*var food=findClosestFood(headCoord,gameData.food)
     var move
     if(food.x>headCoord.x){
       move='left'
@@ -132,9 +132,9 @@ function handleMove(request, response) {
     }else if(food.y<headCoord.y){
       move='down'
     }else{
-      console.log('No food detected');
+      console.log('No food detected');*/
       move = possibleMoves[Math.round(Math.random()*possibleMoves.length)]
-    }
+    //}
     var newHeadPos = getNewPos(yourSnake.head, move)
     headHitsWall = hitsWall(newHeadPos, board.width, board.height)
     var headHitsSelf = hitsSnake(newHeadPos, yourSnake.body)
