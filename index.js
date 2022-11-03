@@ -19,8 +19,8 @@ function handleIndex(request, response) {
     apiversion: '1',
     author: 'Waffle',
     color: '#3E338F',
-    head: 'pixel',
-    tail: 'pixel'
+    head: 'comet',
+    tail: 'mlh-gene'
   }
   response.status(200).json(battlesnakeInfo)
 }
