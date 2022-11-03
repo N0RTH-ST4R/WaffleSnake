@@ -121,7 +121,7 @@ function handleMove(request, response) {
   var move
   var done=false
   while (!done) {
-    var food=findClosestFood(headCoord,req.body.food)
+    var food=findClosestFood(headCoord,gameData.food)
     var move
     if(food.x>headCoord.x){
       move='left'
