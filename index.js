@@ -131,7 +131,10 @@ function handleMove(request, response) {
       move='up'
     }else if(food.y<headCoord.y){
       move='down'
-    }else{console.log('No food detected');move = possibleMoves[Math.round(Math.random()*possibleMoves.length)]}
+    }else{
+      console.log('No food detected');
+      move = possibleMoves[Math.round(Math.random()*possibleMoves.length)]
+    }
     var newHeadPos = getNewPos(yourSnake.head, move)
     headHitsWall = hitsWall(newHeadPos, board.width, board.height)
     var headHitsSelf = hitsSnake(newHeadPos, yourSnake.body)
