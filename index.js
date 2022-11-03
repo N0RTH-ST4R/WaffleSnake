@@ -92,17 +92,17 @@ function handleMove(request, response) {
   var board = gameData.board
 
   var possibleMoves = ['up', 'down', 'left', 'right']
-  var i = 0
-  while (i < 4) {
+  var done=false
+  while (!done) {
     var move = possibleMoves[Math.round(Math.random()*possibleMoves.length)]
     var newHeadPos = getNewPos(yourSnake.head, move)
     headHitsWall = hitsWall(newHeadPos, board.width, board.height)
     var headHitsSelf = hitsSnake(newHeadPos, yourSnake.body)
     var headHitsSnake = hitsOtherSnakes(newHeadPos, board.snakes)
     if (!headHitsWall && !headHitsSelf && !headHitsSnake) {
+      done=true
       break
     }
-    ++i
   }
 
   console.log('MOVE: ' + move)
