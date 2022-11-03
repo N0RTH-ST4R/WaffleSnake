@@ -136,7 +136,7 @@ function handleMove(request, response) {
   var move
   var done=false
   while (!done) {
-    if(possibleMoves.includes(moveToFood(yourSnake.head).move)){
+    if(possibleMoves.includes(moveToFood(yourSnake.head))){
       move=moveToFood(yourSnake.head).move
     }else{
       move = possibleMoves[Math.round(Math.random()*possibleMoves.length)]
