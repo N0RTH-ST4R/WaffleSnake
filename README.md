@@ -1,5 +1,9 @@
 # **WaffleSnake**
-My snake for [BattleSnake]('https://battlesnake.com')
+My snake for [BattleSnake]('www.battlesnake.com')
+
+# **Resources**
+express.js
+[heroku]('www.heroku.com')
 
 
 # **TODO**
