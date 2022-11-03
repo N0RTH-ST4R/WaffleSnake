@@ -136,11 +136,11 @@ function handleMove(request, response) {
   var move
   var done=false
   while (!done) {
-    if(possibleMoves.includes(moveToFood(yourSnake.head).move)){
+    /*if(possibleMoves.includes(moveToFood(yourSnake.head).move)){
       move=moveToFood(yourSnake.head).move
-    }else{
+    }else{*/
       move = possibleMoves[Math.round(Math.random()*possibleMoves.length)]
-    }
+    //}
     var newHeadPos = getNewPos(yourSnake.head, move)
     headHitsWall = hitsWall(newHeadPos, board.width, board.height)
     var headHitsSelf = hitsSnake(newHeadPos, yourSnake.body)
