@@ -93,8 +93,8 @@ function findClosestFood(headCoord, food) {
 }
 
 function moveToFood(headCoord){
-  var food=findClosestFood(yourSnake.head,req.body.food)
-  let move
+  var food=findClosestFood(headCoord,req.body.food)
+  var move
   if(food.x>headCoord.x){
     move='left'
   }else if(food.x<headCoord.x){
