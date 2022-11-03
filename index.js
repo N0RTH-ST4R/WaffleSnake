@@ -91,21 +91,6 @@ function findClosestFood(headCoord, food) {
     y: closest.coords.y
   };
 }
-
-function moveToFood(headCoord){
-  var food=findClosestFood(headCoord,req.body.food)
-  var move
-  if(food.x>headCoord.x){
-    move='left'
-  }else if(food.x<headCoord.x){
-    move='right'
-  }else if(food.y>headCoord.y){
-    move='up'
-  }else if(food.y<headCoord.y){
-    move='down'
-  }else{console.log('No food detected');return null}
-  return move
-}
 // Returns object with new head position after move
 function getNewPos(headCoord, move) {
   var newPos = {...headCoord}
@@ -136,12 +121,17 @@ function handleMove(request, response) {
   var move
   var done=false
   while (!done) {
-    /*if(moveToFood(yourSnake.head)!=null){
-      move=moveToFood(yourSnake.head)
-    }else{
-      move = possibleMoves[Math.round(Math.random()*possibleMoves.length)]
-    }*/
-    move=moveToFood(yourSnake.head)
+    var food=findClosestFood(headCoord,req.body.food)
+    var move
+    if(food.x>headCoord.x){
+      move='left'
+    }else if(food.x<headCoord.x){
+      move='right'
+    }else if(food.y>headCoord.y){
+      move='up'
+    }else if(food.y<headCoord.y){
+      move='down'
+    }else{console.log('No food detected');move = possibleMoves[Math.round(Math.random()*possibleMoves.length)]}
     var newHeadPos = getNewPos(yourSnake.head, move)
     headHitsWall = hitsWall(newHeadPos, board.width, board.height)
     var headHitsSelf = hitsSnake(newHeadPos, yourSnake.body)
