@@ -1,5 +1,5 @@
 # **WaffleSnake**
-My snake for [BattleSnake]('battlesnake.com')
+My snake for [BattleSnake]('https://play.battlesnake.com')
 
 
 # **TODO**
